@@ -9,6 +9,9 @@ app.get('/*', function (req, res) {
   if(host.contains('github')){
     return res.redirect(301, 'https://github.com/tparnell8');
   }
+  if(host.contains('bitbucket')){
+    return res.redirect(301,'https://bitbucket.org/tparnell8/');
+  }
   if(host.contains('blog')){
     return res.redirect(301,'http://blog.tparnell.io');
   }
