@@ -18,7 +18,7 @@ app.get('/*', function (req, res) {
   if(host.contains('resume')){
   return res.redirect(301,'http://resume.tparnell.io');
   }
-  res.status(500).end("Error no redirects found");
+  res.end("Redirect layer for tommyparnell.com, tparnell.io, and other domains :D");
 });
 
 var server = app.listen(port, function () {
