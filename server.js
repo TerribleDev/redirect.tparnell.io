@@ -5,7 +5,7 @@ var port = process.env.PORT || 3000;
 
 app.get('/*', function (req, res) {
   var host = S(req.headers.host);
-  
+
   if(host.contains('github')){
     return res.redirect(301, 'https://github.com/tparnell8');
   }
@@ -18,7 +18,7 @@ app.get('/*', function (req, res) {
   if(host.contains('resume')){
   return res.redirect(301,'http://resume.tparnell.io');
   }
-  res.end("Error no redirects found");
+  res.status(500).end("Error no redirects found");
 });
 
 var server = app.listen(port, function () {
