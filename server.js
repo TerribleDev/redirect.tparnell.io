@@ -7,10 +7,10 @@ app.get('/*', function (req, res) {
   var host = S(req.headers.host);
 
   if(host.contains('github')){
-    return res.redirect(301, 'https://github.com/tparnell8');
+    return res.redirect(301, 'https://github.com/TerribleDev');
   }
   if(host.contains('bitbucket')){
-    return res.redirect(301,'https://bitbucket.org/tparnell8/');
+    return res.redirect(301,'https://bitbucket.org/TerribleDev/');
   }
   if(host.contains('blog')){
     return res.redirect(301,'http://blog.tparnell.io');
