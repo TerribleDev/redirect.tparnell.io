@@ -25,7 +25,7 @@ app.get('/*', function (req, res) {
     return res.redirect(301,'http://blog.terribledev.io');
   }
   if(host.contains('resume')){
-  return res.redirect(301,'http://resume.tparnell.io');
+  return res.redirect(301,'http://resume.terribledev.io');
   }
   res.end("Redirect layer for tommyparnell.com, tparnell.io, and other domains :D");
 });
