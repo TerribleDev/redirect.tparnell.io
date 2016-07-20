@@ -4,8 +4,17 @@ var app = express();
 var port = process.env.PORT || 3000;
 
 app.get('/*', function (req, res) {
-  var host = S(req.headers.host);
-
+  var host = S(req.headers.host.split(':')[0]);
+  var hostToString = host.toString();
+  if(host === "tparnell.io"){
+    return res.redirect(301, 'https://about.tparnell.io');
+  }
+  if(host === "tommyparnell.com"){
+    return res.redirect(301, 'https://about.tommyparnell.com');
+  }
+  if(host === "terribledev.io"){
+    return res.redirect(301, 'https://about.terribledev.io');
+  }
   if(host.contains('github')){
     return res.redirect(301, 'https://github.com/TerribleDev');
   }
