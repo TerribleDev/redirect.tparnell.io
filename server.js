@@ -22,7 +22,7 @@ app.get('/*', function (req, res) {
     return res.redirect(301,'https://bitbucket.org/TerribleDev/');
   }
   if(host.contains('blog')){
-    return res.redirect(301,'http://blog.tparnell.io');
+    return res.redirect(301,'http://blog.terribledev.io');
   }
   if(host.contains('resume')){
   return res.redirect(301,'http://resume.tparnell.io');
