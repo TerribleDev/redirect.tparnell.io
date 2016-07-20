@@ -7,13 +7,14 @@ app.get('/*', function (req, res) {
   var host = S(req.headers.host.split(':')[0]);
   var hostToString = host.toString();
   //todo regex
-  if(host === "tparnell.io"){
+  console.log(hostToString);
+  if(hostToString === "tparnell.io"){
     return res.redirect(301, 'https://about.tparnell.io');
   }
-  if(host === "tommyparnell.com" || host === "www.tommyparnell.com"){
+  if(hostToString === "tommyparnell.com" || hostToString === "www.tommyparnell.com"){
     return res.redirect(301, 'https://about.tommyparnell.com');
   }
-  if(host === "terribledev.io"){
+  if(hostToString === "terribledev.io"){
     return res.redirect(301, 'https://about.terribledev.io');
   }
   if(host.contains('github')){
