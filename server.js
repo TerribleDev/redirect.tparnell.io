@@ -9,6 +9,9 @@ app.get('/*', function (req, res) {
   if(host.contains('github')){
     return res.redirect(301, 'https://github.com/TerribleDev');
   }
+  if(host.contains('tower')){
+    return res.redirect(302, 'http://www.tparnelltower.vpweb.com/');
+  }
   if(host.contains('bitbucket')){
     return res.redirect(301,'https://bitbucket.org/TerribleDev/');
   }
