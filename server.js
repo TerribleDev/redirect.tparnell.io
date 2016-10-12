@@ -8,9 +8,13 @@ app.get('/*', function (req, res) {
   var hostToString = host.toString();
   //todo regex
   console.log(hostToString);
+  if(hostToString === "soupinsummer.co"){
+    return res.redirect(302, 'https://about.terribledev.io');
+  }
   if(hostToString === "tparnell.io"){
     return res.redirect(301, 'https://about.tparnell.io');
   }
+
   if(hostToString === "tommyparnell.com" || hostToString === "www.tommyparnell.com"){
     return res.redirect(301, 'https://about.tommyparnell.com');
   }
