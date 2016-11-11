@@ -29,6 +29,9 @@ app.get('/*', function (req, res) {
   if(host.contains('blog')){
     return res.redirect(301,'http://blog.terribledev.io');
   }
+  if(host.contains('api')){
+  return res.redirect(301,'http://api.terribledev.io/');
+  }
   if(host.contains('resume')){
   return res.redirect(301,'http://resume.terribledev.io');
   }
