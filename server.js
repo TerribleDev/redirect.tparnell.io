@@ -6,6 +6,7 @@ var port = process.env.PORT || 3000;
 app.get('/*', function (req, res) {
   var host = S(req.headers.host.split(':')[0]);
   var hostToString = host.toString();
+  var url = S(req.url.toString());
   //todo regex
   console.log(hostToString);
   if(hostToString === "soupinsummer.co"){
@@ -39,6 +40,9 @@ app.get('/*', function (req, res) {
   if(host.contains('resume')){
   return res.redirect(301,'http://resume.terribledev.io');
   }
+   if(url.contains("docker101")){
+       return res.redirect(301, "https://github.com/TerribleDev/intro-to-docker")
+   }
   res.end("Redirect layer for tommyparnell.com, tparnell.io, and other domains :D");
 });
 
