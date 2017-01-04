@@ -9,19 +9,10 @@ app.get('/*', function (req, res) {
   var url = S(req.url.toString());
   //todo regex
   console.log(hostToString);
-  if(hostToString === "soupinsummer.co"){
-    return res.redirect(302, 'https://about.terribledev.io');
-  }
-  if(hostToString === "tparnell.io"){
-    return res.redirect(301, 'https://about.tparnell.io');
+  if(url.contains("docker101")){
+        return res.redirect(301, "https://github.com/TerribleDev/intro-to-docker")
   }
 
-  if(hostToString === "tommyparnell.com" || hostToString === "www.tommyparnell.com"){
-    return res.redirect(301, 'https://about.tommyparnell.com');
-  }
-  if(hostToString === "terribledev.io"){
-    return res.redirect(301, 'https://about.terribledev.io');
-  }
   if(host.contains('github')){
     return res.redirect(301, 'https://github.com/TerribleDev');
   }
@@ -40,9 +31,19 @@ app.get('/*', function (req, res) {
   if(host.contains('resume')){
   return res.redirect(301,'http://resume.terribledev.io');
   }
-   if(url.contains("docker101")){
-       return res.redirect(301, "https://github.com/TerribleDev/intro-to-docker")
-   }
+  if(hostToString === "soupinsummer.co"){
+    return res.redirect(302, 'https://about.terribledev.io');
+  }
+  if(hostToString === "tparnell.io"){
+    return res.redirect(301, 'https://about.tparnell.io');
+  }
+
+  if(hostToString === "tommyparnell.com" || hostToString === "www.tommyparnell.com"){
+    return res.redirect(301, 'https://about.tommyparnell.com');
+  }
+  if(hostToString === "terribledev.io"){
+    return res.redirect(301, 'https://about.terribledev.io');
+  }
   res.end("Redirect layer for tommyparnell.com, tparnell.io, and other domains :D");
 });
 
